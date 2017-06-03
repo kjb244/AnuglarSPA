@@ -1,0 +1,24 @@
+<div ng-app="myApp" ng-controller="ctrlSection">
+	<div class="row">
+		<div class="medium-6 columns left">
+			<img src="http://placehold.it/350x400"/>
+		</div>
+
+		<div class="medium-6 columns right">
+			<div class="switch" ng-switch on="currRoute.queryParam">
+				<div ng-switch-when="first" class="animate-switch">
+		        	<chapter-one-section-one-dir/>
+				</div>
+				<div ng-switch-when="second" class="animate-switch">
+		        	<chapter-one-section-two-dir/>
+				</div>
+				<div ng-switch-when="third" class="animate-switch">
+		        	<chapter-one-section-three-dir/>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+</div>
