@@ -1,0 +1,19 @@
+<div ng-init="showSpinner=true" ng-show="showSpinner" class="row">
+<div class="small-12 columns">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+</div>
+<form ng-show="!showSpinner">
+    <h3>Three</h3>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" placeholder="veteranid" name="veteranid" ng-model="form.veteranid" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" placeholder="startdate" name="startdate" ng-model="form.startdate"/>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="button" ng-click="clickSubmit('back', form)">Back</a>
+</form>

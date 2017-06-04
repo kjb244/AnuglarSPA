@@ -1,0 +1,32 @@
+<div ng-init="showSpinner=true" ng-show="showSpinner" class="row">
+<div class="small-12 columns">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+</div>
+<form ng-show="!showSpinner" name="formWrapper">
+    <h3>First</h3>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="firstname" placeholder="firstname" ng-model="form.firstname" required ng-class="{ 'input-has-error' : formWrapper.firstname.$invalid && !formWrapper.firstname.$pristine }" />
+            <div ng-show="formWrapper.firstname.$invalid && formWrapper.firstname.$touched" class="error-message">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <span>First name is required</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="lastname" placeholder="lastname" ng-model="form.lastname" required ng-pattern="/^[A-z0-9]{1,30}$/" ng-class="{ 'input-has-error' : formWrapper.lastname.$invalid && !formWrapper.lastname.$pristine }"/>
+            <div ng-show="formWrapper.lastname.$error.required && formWrapper.lastname.$touched" class="error-message">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <span>Last name is required</span>
+            </div>
+            <div ng-show="formWrapper.lastname.$error.pattern && formWrapper.lastname.$touched" class="error-message">
+                <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <span>Last name is invalid</span>
+            </div>
+
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="button" ng-disabled="formWrapper.$invalid" ng-click="formWrapper.$valid && clickSubmit('submit', form)">Submit</a>
+</form>

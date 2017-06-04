@@ -1,0 +1,30 @@
+<div ng-init="showSpinner=true" ng-show="showSpinner" class="row">
+<div class="small-12 columns">
+    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+</div>
+</div>
+<form ng-show="!showSpinner">
+    <h3>Second</h3>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="street" placeholder="street" ng-model="form.street" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="city" placeholder="password" ng-model="form.city"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="state" placeholder="state" ng-model="form.state"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" name="zip" placeholder="zip" ng-model="form.zip"/>
+        </div>
+    </div>
+    <a href="javascript:void(0)" class="button" ng-click="clickSubmit('submit', form)">Submit</a>
+    <a href="javascript:void(0)" class="button" ng-click="clickSubmit('back', form)">Back</a>
+</form>

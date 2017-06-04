@@ -20,6 +20,11 @@ router.get('/partials/:name', function (req, res) {
   res.render('partials/' + name);
 });
 
+router.get('/directive_templates/:name', function (req, res) {
+  var name = req.params.name;
+  res.sendFile(path.join(__dirname, '../', 'views', 'directive_templates', name));
+});
+
 
 router.get('/getRoutes', function(req, res){
 	res.setHeader('Content-Type', 'application/json');
