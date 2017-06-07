@@ -26,10 +26,14 @@ app.controller("ctrlSection", function($scope, ajaxFetch, utilityFunctions ) {
   //current route = false on load
   $scope.currRoute = false;
 
+
   //get route info from server
   ajaxFetch.getData('/getRoutes').then(function(res){
     $scope.routesObj = res.data;
     $scope.currRoute = $scope.routesObj.default;
+    $scope.house = {};
+    $scope.house.fillPercent = $scope.routesObj.progress;
+
 
   });
 
@@ -38,12 +42,13 @@ app.controller("ctrlSection", function($scope, ajaxFetch, utilityFunctions ) {
   $scope.clickSubmit = function(typ, form) {
     typ = typ || 'submit';
     form = form || {};
-    
+
 
     if (typ === 'submit'){
       ajaxFetch.getData($scope.currRoute.submit, 'POST', form).then(function(res){
         if (res.data.isValid){
           $scope.currRoute = $scope.routesObj[res.data.nextRoute];
+          $scope.house.fillPercent = $scope.currRoute.progress;
         }
       });
     }
@@ -51,6 +56,7 @@ app.controller("ctrlSection", function($scope, ajaxFetch, utilityFunctions ) {
       ajaxFetch.getData($scope.currRoute.back, 'POST', form).then(function(res){
         if (res.data.isValid){
           $scope.currRoute = $scope.routesObj[res.data.prevRoute];
+          $scope.house.fillPercent = $scope.currRoute.progress;
         }
       });
     }

@@ -2,18 +2,21 @@
   "default": {
     "queryParam": "first",
     "init": "/getUserInfo",
-    "submit": "/postUserInfo"
+    "submit": "/postUserInfo",
+    "progress": 0
   },
   "second": {
     "queryParam": "second",
     "init": "/getAddressInfo",
     "submit": "/postAddressInfo",
-    "back": "/postAddressInfo"
+    "back": "/postAddressInfo",
+    "progress": 10
   },
   "third": {
     "queryParam": "third",
     "init": "/getMilitaryInfo",
     "back": "/postMilitaryInfo",
-    "submit": false
+    "submit": false,
+    "progress": 20
   }
 }

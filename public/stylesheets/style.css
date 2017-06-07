@@ -81,3 +81,74 @@
 .input-has-error{
 	border: 1px solid red !important;
 }
+
+.house-progress{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	margin-left: -20px;
+}
+
+.house{
+	position: relative;
+	height: 45px;
+}
+
+.roof {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-bottom: 25px solid rgb(162,133,133);
+	position: absolute;
+}
+
+.structure{
+	width: 25px;
+	height: 30px;
+	background-color: rgb(162,133,133);
+	top: 15px;
+	position: absolute;
+	left: 13px;
+}
+
+.chimney{
+	position: absolute;
+	width: 10px;
+	height: 20px;
+	background-color: rgb(162,133,133);
+	left: 30px
+
+}
+
+.structure-fill{
+	position: absolute;
+	background-color: green;
+	bottom: 0;
+	left: 13px;
+	width: 25px;
+	height: 0px;
+	transition: all 1s linear;
+
+}
+
+.top-structure-fill-75{
+	position: absolute;
+	border-bottom: 0px solid green;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	width: 26px;
+	bottom: 20px;
+
+}
+
+.top-structure-fill-100{
+	width: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-bottom: 14px solid green;
+	position: absolute;
+	top: 10px;
+	left: 11px;
+	display: none;
+}

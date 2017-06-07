@@ -75,6 +75,24 @@ app.directive("chapterSummaryDir", function(ajaxFetch) {
   };
 });
 
+app.directive("houseProgressDir", function(){
+  return{
+    restrict: "EA",
+    scope: {
+      progress: "="
+    },
+    templateUrl: 'directive_templates/house-progress.html',
+    link: function(scope, element, attrs) {
+      scope.$watch('progress', function(newValue, oldValue){
+        newValue = newValue || 0;
+        angular.element(element[0].querySelector('.structure-fill')).css('height', newValue + "px");
+      });
+      
+    }
+  };
+
+});
+
 
 app.directive("chapterOneSectionOneDir", function(ajaxFetch) {
   return {
