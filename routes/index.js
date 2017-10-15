@@ -8,6 +8,9 @@ var db = require('diskdb');
 
 db = db.connect(path.join(__dirname, '..','database'), ['userinfo', 'addressinfo', 'militaryinfo']);
 
+function delayResponse(res, obj){
+    setTimeout(()=> { res.send(JSON.stringify(obj)) }, 500);
+}
 
 //GETS
 router.get('/', function(req, res, next) {
@@ -32,21 +35,23 @@ router.get('/getRoutes', function(req, res){
 });
 
 router.get('/getUserInfo', function(req, res){
-	let infoArr = db.userinfo.find();
 
-	res.send(JSON.stringify(infoArr));
+    let infoArr = db.userinfo.find();
+    delayResponse(res, infoArr);
+
 });
+
 
 router.get('/getAddressInfo', function(req, res){
     let infoArr = db.addressinfo.find();
+    delayResponse(res, infoArr);
 
-    res.send(JSON.stringify(infoArr));
 });
 
 router.get('/getMilitaryInfo', function(req, res){
     let infoArr = db.militaryinfo.find();
+    delayResponse(res, infoArr);
 
-    res.send(JSON.stringify(infoArr));
 });
 
 
